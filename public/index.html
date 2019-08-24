@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-    <title>Relaxing Spa</title>
+    <title>HCA Spa</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.ico" />
 </head>
 
 <body>
     <main>
         <!-- Navbar Start-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-info">
             <a class="navbar-brand">HCA Spa</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,33 +42,24 @@
                 <div class="col-md-6">
                     <div
                         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <strong class="d-inline-block mb-2 text-primary">World</strong>
-                            <h3 class="mb-0">Featured post</h3>
-                            <div class="mb-1 text-muted">Nov 12</div>
+                        <div class="col p-4 d-flex bg-light flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">Deals</strong>
+                            <h3 class="mb-0">All massages discounted!</h3>
+                            <div class="mb-1 text-muted">Aug 19</div>
                             <p class="card-text mb-auto">
-                                This is a wider card with supporting text below as a natural
-                                lead-in to additional content.
+                                From now until the end of the month all massages are 25% off! Click below to view the deals!
                             </p>
-                            <a href="#" class="stretched-link">Continue reading</a>
+                            <a href="#" id="saleLink" class="btn btn-outline-primary stretched-link">View deals</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
-                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                                preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                                aria-label="Placeholder: Thumbnail">
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c"></rect>
-                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                                    Thumbnail
-                                </text>
-                            </svg>
+                            <img src="images/massage.png" alt="Massage Thumbnail">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div
                         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
+                        <div class="col p-4 d-flex flex-column bg-light position-static">
                             <strong class="d-inline-block mb-2 text-success">Design</strong>
                             <h3 class="mb-0">Post title</h3>
                             <div class="mb-1 text-muted">Nov 11</div>
@@ -75,7 +67,7 @@
                                 This is a wider card with supporting text below as a natural
                                 lead-in to additional content.
                             </p>
-                            <a href="#" class="stretched-link">Continue reading</a>
+                            <a href="#" class="btn btn-outline-primary stretched-link">Continue reading</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
@@ -94,22 +86,24 @@
         </div>
 
         <!-- Services lookup block -->
-        <div id="servicesBlock" class="container-fluid">
+        <div id="servicesBlock" class="container-fluid text-center">
                 <section class="hidden" id="categoryContainer">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="catDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select a Category</button>
+                    <button class="btn btn-secondary dropdown-toggle mb-3" type="button" id="catDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select a Category</button>
                     <div class="dropdown-menu" id="categoryList" aria-labelledby="catDropdown">
     
                     </div>
-                    <h3 id="categoryName">&nbsp;</h3>
+                    <div id="catNameHeading" class="hidden heading-container bg-light border rounded-lg border-secondary">
+                        <h3 class="display-4" id="categoryName">&nbsp;</h3>
+                    </div>
                 </section>
                 <section class="hidden" id="servicesContainer">
-                    <div class="row">
-                        <div class="col-md-6">
-                            
-                            <ul id="serviceList"></ul>
+
+                        <div id="listContainer" class="cat-list">                        
+                            <ul class="list-group mb-5" id="serviceList"></ul>
                         </div>
-                        <div class="col=md-6 hidden" id="serviceCard">
-                            <div id="card" class="card position-fixed" style="width: 18rem;">
+                        <div class="hidden float-right mb-5" id="serviceCard">
+                            <div id="card" class="card border-dark" style="width: 18rem;">
+                                <img id="cardImage" class="card-img-top" alt="Card Image">
                                 <div class="card-body">
                                     <h4 class="card-title" id="cardTitle">&nbsp;</h4>
                                     <p class="card-text" id="cardText1">&nbsp;</p>
@@ -117,7 +111,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
     </main>
