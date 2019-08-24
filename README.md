@@ -15,4 +15,3 @@ To launch the server, navigate to the parent folder RelaxingSPA in your file dir
 ## Website
 
 ![](public/images/screenshot.png)
-Format: ![Website]
