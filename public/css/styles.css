@@ -10,3 +10,74 @@
 {
     display: none;
 }
+
+#servicesBlock
+{
+    padding: 3%;
+}
+
+.cat-list
+{
+    width: 300px;
+}
+
+body
+{
+    background: url("../images/pattern.png");
+    background-repeat: repeat;
+}
+
+.heading-container
+{
+    padding: 1%;
+}
+
+#catNameHeading
+{
+    width: 70%;
+    margin-left: 15%;
+}
+
+#categoryContainer
+{
+    padding: 2%;
+}
+
+#spaBanner
+{
+    border-bottom: 3px solid black;  
+}
+.navbar
+{
+    border-bottom: 3px solid black;
+    
+}
+
+.cat-list
+{
+    position: absolute;
+    margin-left: 15%;
+}
+
+#serviceCard
+{
+    margin-right: 15%;
+}
+
+@media only screen and (max-width: 756px) 
+{
+    #listContainer
+    {
+        position: relative;
+    }
+}
+
+.onSale
+{
+    text-decoration: line-through;
+}
+
+.salePrice
+{
+    color: green;
+}
