@@ -129,8 +129,7 @@ function getServices(category) {
 						getService(service.ServiceID);
 					})
 			);
-			// Category image is dynamically added based on the category value
-			$("#cardImage").attr("src", `images/${category}.png`)
+			
 		});
 		$("#servicesContainer").show();
 	});
@@ -145,8 +144,19 @@ function getServices(category) {
 *
 */
 function getService(serviceId) {
+	$("#serviceCard").html(`		<div id='card' class='card border-dark' style='width: 18rem;'>
+											<img id='cardImage' src='#' class='card-img-top' alt='Card Image'>
+											<div class='card-body'>
+												<h2 class='card-title' id='cardTitle'>&nbsp;</h4>
+												<p class='card-text' id='cardText1'>&nbsp;</p>
+												<p class='card-text' id='cardText2'>&nbsp;</p>
+											</div>
+										</div>`)
+	
 	// JSON file is called and the relevant object is stored in the service variable
 	$.getJSON(`/api/services/${serviceId}`, service => {
+		// Category image is dynamically added based on the category value
+		$("#cardImage").attr("src", `images/${service.CategoryName}.png`)
 		// If the category is acupuncture a badge is attached to the service name
 		if (service.CategoryName == "Acupuncture") {
 			$("#cardTitle").html(service.ServiceName + " <span class='badge badge-success'>New!</span>");
